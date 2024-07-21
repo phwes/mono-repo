@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "module": "commonjs",
+    "strict": true,
+    "target": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "@mono-repo/*": ["packages/*/src"]
+    }
+  },
+  "references": [
+    { "path": "./packages/client" },
+    { "path": "./packages/common" },
+    { "path": "./packages/server" }
+  ],
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules"]
+}

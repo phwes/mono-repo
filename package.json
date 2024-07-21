@@ -1,0 +1,23 @@
+{
+  "name": "mono-repo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "git@github.com:phwes/mono-repo.git",
+  "author": "Philip Wester <pwester@univid.io>",
+  "license": "MIT",
+  "scripts": {
+    "bootstrap": "yarn install && yarn build",
+    "build": "yarn workspaces foreach --all --topological run build",
+    "clean": "yarn workspaces foreach --all --topological run clean",
+    "lint": "yarn workspaces foreach --all run lint",
+    "client:start": "yarn workspace @mono-repo/client start",
+    "server:start": "yarn workspace @mono-repo/server start"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "packageManager": "yarn@4.3.1"
+}
